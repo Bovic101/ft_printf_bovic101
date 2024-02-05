@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexaconvert_printf.c                            :+:      :+:    :+:   */
+/*   ft_hexaconvert_up_printf.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 03:29:02 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/02/05 19:28:09 by vodebunm         ###   ########.fr       */
+/*   Created: 2024/02/05 19:57:45 by vodebunm          #+#    #+#             */
+/*   Updated: 2024/02/05 20:00:53 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	convert_to_hex(int *ptr, int counter)
 	while (i >= 0)
 	{
 		if (ptr[i] > 9)
-			ptr[i] = ptr[i] + 39;
+			ptr[i] = ptr[i] + 7;
 		ft_putchar_fd(ptr[i] + '0', 1);
 		i--;
 	}
@@ -39,7 +39,7 @@ static int	calculate_hex_counter(unsigned int num)
 	return (counter + 1);
 }
 
-int	ft_hexaconvert_printf(va_list list)
+int	ft_hexaconvert_up_printf(va_list list)
 {
 	int				i;
 	int				counter;

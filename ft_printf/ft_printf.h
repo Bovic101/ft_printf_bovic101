@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 03:07:54 by vodebunm          #+#    #+#             */
-/*   Updated: 2023/12/06 01:46:49 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/02/05 20:00:45 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,8 @@
 # include "libft.h"
 
 int	ft_prinft(const char *s, ...);
+int	ft_str_printf(va_list list);
+int	ft_hexaconvert_printf(va_list list);
+int	ft_hexaconvert_up_printf(va_list list);
 
 #endif
