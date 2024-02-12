@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 19:57:45 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/02/05 20:00:53 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/02/12 05:08:29 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ int	ft_hexaconvert_up_printf(va_list list)
 	temp = num;
 	counter = calculate_hex_counter(num);
 	ptr = malloc(sizeof(int) * counter);
+	if (!ptr)
+		return (-1);
 	i = 0;
 	while (i < counter)
 	{

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexaconvert_printf.c                            :+:      :+:    :+:   */
+/*   ft_hexaconvert_pointer.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 03:29:02 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/02/12 05:05:31 by vodebunm         ###   ########.fr       */
+/*   Created: 2024/02/12 04:18:04 by vodebunm          #+#    #+#             */
+/*   Updated: 2024/02/12 04:50:56 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	convert_to_hex(int *ptr, int counter)
+static void	convert_to_hex(long int *ptr, long int counter)
 {
-	int	i;
+	long int	i;
 
 	i = counter - 1;
 	while (i >= 0)
@@ -26,9 +26,9 @@ static void	convert_to_hex(int *ptr, int counter)
 	}
 }
 
-static int	calculate_hex_counter(unsigned int num)
+static int	calculate_hex_counter(unsigned long int num)
 {
-	int	counter;
+	long int	counter;
 
 	counter = 0;
 	while (num / 16 != 0)
@@ -39,23 +39,20 @@ static int	calculate_hex_counter(unsigned int num)
 	return (counter + 1);
 }
 
-int	ft_hexaconvert_printf(va_list list)
+int	ft_hexaconvert_pointer(unsigned long int num)
 {
-	int				i;
-	int				counter;
-	unsigned int	num;
-	unsigned int	temp;
-	int				*ptr;
+	long int			i;
+	long int			counter;
+	unsigned long int	temp;
+	long int			*ptr;
 
 	i = 0;
 	counter = 0;
-	num = va_arg(list, unsigned int);
 	temp = num;
 	counter = calculate_hex_counter(num);
-	ptr = malloc(sizeof(int) * counter);
+	ptr = malloc(sizeof(long int) * counter);
 	if (!ptr)
 		return (-1);
-	i = 0;
 	while (i < counter)
 	{
 		ptr[i] = temp % 16;

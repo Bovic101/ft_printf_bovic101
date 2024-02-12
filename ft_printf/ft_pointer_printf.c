@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_pointer_printf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 03:07:54 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/02/12 05:26:35 by vodebunm         ###   ########.fr       */
+/*   Created: 2024/02/12 03:19:54 by vodebunm          #+#    #+#             */
+/*   Updated: 2024/02/12 05:17:02 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include "libft.h"
+int	ft_pointer_printf(va_list list)
+{
+	void		*p;
+	long int	a;
+	int			b;
 
-int	ft_prinft(const char *s, ...);
-int	ft_str_printf(va_list list);
-int	ft_hexaconvert_printf(va_list list);
-int	ft_hexaconvert_up_printf(va_list list);
-int	ft_int_dec_number_print(long long int n);
-int	ft_hexaconvert_pointer(unsigned long int num);
-int	ft_pointer_printf(va_list list);
-#endif
+	b = 0;
+	p = va_arg(list, void *);
+	if (p == NULL)
+	{
+		ft_putstr_fd("Nil", 1);
+	}
+	else
+	{
+		a = (unsigned long int)p;
+		ft_putstr_fd("0x", 1);
+		b = ft_hexaconvert_pointer(a);
+	}
+	return (b + 2);
+}
