@@ -6,13 +6,14 @@
 #    By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/29 19:07:04 by vodebunm          #+#    #+#              #
-#    Updated: 2024/02/04 04:36:05 by vodebunm         ###   ########.fr        #
+#    Updated: 2024/02/13 03:58:32 by vodebunm         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # Library Name
 NAME = libft.a
+CC = gcc
 
 # List of source files
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
