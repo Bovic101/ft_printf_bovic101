@@ -6,7 +6,7 @@
 /*   By: vodebunm <vodebunm@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 03:07:54 by vodebunm          #+#    #+#             */
-/*   Updated: 2024/02/12 05:26:35 by vodebunm         ###   ########.fr       */
+/*   Updated: 2024/02/13 02:42:41 by vodebunm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,7 @@ int	ft_hexaconvert_up_printf(va_list list);
 int	ft_int_dec_number_print(long long int n);
 int	ft_hexaconvert_pointer(unsigned long int num);
 int	ft_pointer_printf(va_list list);
+int	ft_characater_printf(char c);
+int	ft_conversion_specifier(const char c, va_list list, int *i);
+
 #endif
